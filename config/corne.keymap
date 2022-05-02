@@ -21,74 +21,74 @@
                 compatible = "zmk,keymap";
 
                 0_layer {
-                label = "JustAToy";                
+                label = "KK's";                
           
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  | BKSP |
-// | MO(1)|  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |  '   |
-// | SSHFT|  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  | ENTER|
-//                    |RCTRL| ALT | SPC |   |MO(2)|MO(3)| GUI |
+// |  TAB    |  Q  |  W  |  E  |  R  |  T  |      |  Y  |  U  |  I  |  O  |  P  | BKSP |
+// |CAP(CTRL)|  A  |  S  |  D  |  F  |  G  |      |  H  |  J  |  K  |  L  |  ;  |ENT(SHFT)|
+// |   SHFT  |  Z  |  X  |  C  |  V  |  B  |      |  N  |  M  | ,<  | .>  | /?  | ' "  |
+//                     |LALT |SPC(MO1)|LGUI|      |-_(MO3)|SPC(MO2)| =+ |
 // -----------------------------------------------------------------------------------------
 
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T      &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &mo 1     &kp A &kp S &kp D &kp F &kp G      &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &sk LSHFT &kp Z &kp X &kp C &kp V &kp B      &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ENTER
-              &kp LCTRL &kp LALT &kp SPACE      &mo 2 &mo 3  &kp RGUI
+   &kp TAB        &kp Q &kp W &kp E &kp R &kp T     &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
+   &mt LCTRL CAPS &kp A &kp S &kp D &kp F &kp G      &kp H &kp J  &kp K     &kp L   &kp SEMI &mt RSHFT ENTER
+   &kp LSHFT      &kp Z &kp X &kp C &kp V &kp B     &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp SQT
+                  &kp LALT &lt 1 SPACE &kp LGUI     &lt 3 MINUS  &lt 2 SPACE &kp EQUAL 
                         >;
                 };
                 
                 1_layer {
-                label = "NotCaps";
-                
-// -----------------------------------------------------------------------------------------
-// |  ESC |     |PSCRN| SLCK|PAUSE| CAL |   | NUM |  7  |  8  |  9  |  -  | BKSP |
-// |      | CAPS| INS | HOME|PG_UP| F13 |   | F15 |  4  |  5  |  6  |  +  |   *  |
-// | LSHFT|     | DEL | END |PG_DN| F14 |   | F16 |  1  |  2  |  3  |  /  | ENTER|
-//                    |RCTRL| ALT | SPC |   |     |  0  |  .  |
-// -----------------------------------------------------------------------------------------
+                label = "ARROW";
 
+// -----------------------------------------------------------------------------------------
+// |  ESC |  1  |  2  |  3  |  4  |  5  |      |  6  |   7  |  8  |  9  |  0   |  BS  |
+// |  `   |  !  |  @  |  #  |  $  |  %  |      | UP  | LEFT |DOWN |RIGHT| END  |  .   |
+// |  ~   |  ^  |  &  |  *  |  (  |  )  |      |  [  |  ]   |  {  |  }  |  <   |  DEL |
+//                  |LALT|SPC(MO1)|TO(2)|      |  |  | SPC  |  \  |
+// -----------------------------------------------------------------------------------------
+                                   
                         bindings = <
-   &kp ESC    &trans     &kp PSCRN &kp SLCK  &kp PAUSE_BREAK &kp K_CALC &kp KP_NUM &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_MINUS  &kp BSPC
-   &trans     &kp CAPS   &kp INS   &kp HOME  &kp PG_UP       &kp F13    &kp F15    &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS   &kp KP_ASTERISK
-   &kp LSHFT  &trans     &kp DEL   &kp END   &kp PG_DN       &kp F14    &kp F16    &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_DIVIDE &kp ENTER
-                                   &kp LCTRL &kp LALT        &kp SPACE  &trans     &kp KP_N0 &kp KP_DOT
+   &kp ESC   &kp N1    &kp N2   &kp N3   &kp N4   &kp N5         &kp N6   &kp N7    &kp N8    &kp N9    &kp N0  &kp BSPC
+   &kp GRAVE &kp EXCL  &kp AT   &kp HASH &kp DLLR &kp PRCNT      &kp UP   &kp LEFT  &kp DOWN  &kp RIGHT &kp END &kp DOT
+   &kp TILDE &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR       &kp LBKT &kp RBKT  &kp LBRC  &kp RBRC  &kp LT  &kp DEL
+                                  &kp LALT &lt 1 SPACE &to 2     &kp PIPE &kp SPACE &kp BSLH
                         >;
                 };
                 
                 2_layer {
-                label = "NoArrows";
+                label = "Function";
                 
-// -----------------------------------------------------------------------------------------
-// |  ESC |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// |   `  |  -  |  =  |  [  |  ]  |  \  |   | LEFT| DOWN|  UP |RIGHT|  ;  |  '   |
-// | LSHFT|  _  |  +  |  {  |  }  |  |  |   |  :  |  "  |  <  |  >  |  ?  | ENTER| 
-//                    |RCTRL| ALT | SPC |   |     |     | GUI |
-// -----------------------------------------------------------------------------------------
+// --------------------------------------------------------------------------------------------
+// | to(0)|  +  |  3  |  2  |  1  |  0  |      |  DEL |  1  |  2  |  3   |  4  |  BS |
+// |  /   |  -  |  6  |  5  |  4  |  =  |      |  M   |  Q  |  W  |  E   | SPC |  F  |
+// |  .   |  *  |  9  |  8  |  7  |  .  |      |  S   |  R  |  D  | LEFT | UP  |RIGHT|
+//                    |     | SPC |     |      |  P   |  N  |  T  |
+// --------------------------------------------------------------------------------------------
 
                         bindings = <
-   &kp  ESC  &kp EXCL  &kp AT    &kp HASH &kp DLLR &kp PRCNT  &kp CARET &kp AMPS &kp STAR &kp LPAR  &kp RPAR  &kp BSPC
-   &kp GRAVE &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH   &kp LEFT  &kp DOWN &kp UP   &kp RIGHT &kp SEMI &kp APOS
-   &kp LSHFT &kp UNDER &kp PLUS  &kp LBRC &kp RBRC &kp PIPE   &kp COLON &kp DQT  &kp LT   &kp GT    &kp QMARK &kp ENTER
-                                   &kp LCTRL &kp LALT &kp SPACE         &trans &trans &kp RGUI
+   &to 0        &kp PLUS &kp KP_N3  &kp KP_N2  &kp KP_N1  &kp KP_N0      &kp DEL  &kp N1  &kp N2  &kp N3  &kp N4  &kp BSPC
+   &kp KP_SLASH &kp MINUS &kp KP_N6 &kp KP_N5  &kp KP_N4  &kp EQUAL      &kp M   &kp Q &kp W &kp E  &kp SPACE  &kp F
+   &kp DOT      &kp KP_MULTIPLY &kp KP_N9  &kp KP_N8  &kp KP_N7 &kp DOT  &kp S  &kp R &kp D &kp LEFT &kp UP &kp RIGHT
+                                &trans   &kp SPACE  &trans               &kp P  &kp N  &kp T
                         >;
                 };
                 
                 3_layer {
-                label = "INeedF5";
+                label = "MODEL";
                 
-// -----------------------------------------------------------------------------------------
-// |  F1  |  F2 |  F3 |  F4 |  F5 |  F6 |   |  F7 |  F8 |  F9 | F10 | F11 | F12 |
-// |  F7  |  F8 |  F9 | F10 | F11 | F12 |   |    |USB/BLE|    |     |     |     |
-// | LSHFT|     |     |     |     |     |   |BTCLR| BT0 | BT1 | BT2 | BT3 |ENTER| 
-//                    |RCTRL| ALT | SPC |   |     |     | GUI |
-// -----------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------
+// |      |     |     |     |     |     |      | ESC |  F1  |  F2  |  F3  |  F4  | ALT |
+// | TAB  |     |     |     |     |     |      |     |  F5  |  F6  |  F7  |  F8  | TAB |
+// |USB/BLE| BT1| BT2 | BT3 | BT4 |BTCLR|      |PSCRN|  F9  |  F10 |  F11 |  F12 |PSCRN| 
+//                    | ALT |mo(1)|     |      |mo(3)|      |      |
+// ------------------------------------------------------------------------------------------
 
                         bindings = <
-   &kp F1 &kp F2 &kp F3 &kp F4  &kp F5  &kp F6     &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
-   &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12    &trans &out OUT_TOG &trans &trans &trans
-   &kp LSHFT &trans &trans &trans &trans &ext_power EP_TOG    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &kp ENTER
-                    &kp LCTRL &kp LALT &kp SPACE   &trans &trans &kp RGUI
+   &trans &trans &trans &trans  &trans  &trans                                  &kp ESC  &kp F1  &kp F2  &kp F3  &kp F4  &kp RALT
+   &kp TAB &trans &trans &trans  &trans  &trans                                 &trans   &kp F5  &kp F6  &kp F7  &kp F8  &kp TAB
+   &out OUT_TOG &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_CLR  &kp PSCRN  &kp F9  &kp F10 &kp F11 &kp F12 &kp PSCRN
+                    &kp LALT &mo 1 &trans                                       &mo 3  &trans &trans
                         >;
                 };
                 
